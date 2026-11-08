@@ -8,6 +8,7 @@ public class Main {
         Scanner inTastiera = new Scanner(System.in);
         System.out.println("Inserisci un intero positivo: ");
         int count = inTastiera.nextInt();
+        inTastiera.close();
 
         contatoreThread johnNash = new contatoreThread("john", count);
         Thread leoFibonacci = new Thread(new contatoreThread("leo", count));

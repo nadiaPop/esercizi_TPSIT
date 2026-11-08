@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
 
         Scanner inTastiera = new Scanner(System.in);
+        inTastiera.close();
 
         System.out.println("Inserisci il numero di battiti da far eseguire al drago: ");
         int count = inTastiera.nextInt();
