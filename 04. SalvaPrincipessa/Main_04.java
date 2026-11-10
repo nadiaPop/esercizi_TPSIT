@@ -10,14 +10,23 @@ public class Main_04 {
             draghi.add(t);
         }
 
+        System.out.println("I draghi si levano in volo per andare a distruggere il villaggio!")
+
         Thread sangiorgio = new Thread(new Cavaliere_04("sangiorgio", draghi.get(0)));
 
-        for (Thread t:draghi) {
-            t.start();
+        System.out.println("Il cavaliere si prepara per difendere il villaggio!")
+
+        try {
+            for (Thread t:draghi) {
+                t.join();
+            }
+            sangiorgio.join();
+        } catch (InterruptedException e) {
+            System.out.println(e);
         }
-        
-        System.out.println("I draghi sono partiti per distruggere il villagio");
-        sangiorgio.start();
-        System.out.println("Il cavaliere ha atterrato il drago!");
+
+//        System.out.println("I draghi sono partiti per distruggere il villagio");
+//        sangiorgio.start();
+//        System.out.println("Il cavaliere ha atterrato il drago!");
     }
 }
